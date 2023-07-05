@@ -6,4 +6,17 @@
         * name VARCHAR(100)
     }
 
+    entity Notification {
+         * id INT AUTO INCREMENT <<PK>>
+         --
+         * title VARCHAR(255)
+         * detail TEXT
+         * create_at TIMESTAMP
+         --
+         user_id VARCHAR(100) <<FK>>
+         category_id VARCHAR(100) <<FK>>
+    }
+
+User ||--o{ Notification
+
 @enduml
