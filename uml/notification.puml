@@ -1,0 +1,9 @@
+@startuml
+
+    entity User {
+        * id VARCHAR(100) <<PK>>
+        --
+        * name VARCHAR(100)
+    }
+
+@enduml
