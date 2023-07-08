@@ -156,7 +156,10 @@ SELECT *
 FROM notification;
 
 INSERT INTO notification_read(is_read, notification_id, user_id)
-VALUES (true, 2, 'eko');
+VALUES (true, 2, 'alwani');
+
+INSERT INTO notification_read(is_read, notification_id, user_id)
+VALUES (true, 2, 'nurul');
 
 
 SELECT *
