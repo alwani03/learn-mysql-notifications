@@ -175,3 +175,30 @@ FROM notification n
 WHERE (n.user_id = 'eko' OR n.user_id IS NULL)
   AND (nr.user_id = 'eko' OR nr.user_id IS NULL)
 ORDER BY n.create_at DESC;
+
+/* Counter */
+
+SELECT COUNT(*)
+FROM notification n
+         JOIN category c ON (n.category_id = c.id)
+         LEFT JOIN notification_read nr ON (nr.notification_id = n.id)
+WHERE (n.user_id = 'eko' OR n.user_id IS NULL)
+  AND (nr.user_id IS NULL)
+ORDER BY n.create_at DESC;
+
+SELECT COUNT(*)
+FROM notification n
+         JOIN category c ON (n.category_id = c.id)
+         LEFT JOIN notification_read nr ON (nr.notification_id = n.id)
+WHERE (n.user_id = 'alwani' OR n.user_id IS NULL)
+  AND (nr.user_id IS NULL)
+ORDER BY n.create_at DESC;
+
+
+
+INSERT INTO notification_read(is_read, notification_id, user_id)
+VALUES (true, 6, 'alwani');
+INSERT INTO notification_read(is_read, notification_id, user_id)
+VALUES (true, 5, 'alwani');
+INSERT INTO notification_read(is_read, notification_id, user_id)
+VALUES (true, 1, 'alwani');
